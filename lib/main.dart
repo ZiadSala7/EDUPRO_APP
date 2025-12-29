@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const EDUPROApp());
-}
-class EDUPROApp extends StatelessWidget {
-  const EDUPROApp({super.key});
+import 'core/di/injection.dart';
+import 'edupro_app.dart';
 
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp();
-  }
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await setupDependencies();
+  runApp(const EduProApp());
 }
